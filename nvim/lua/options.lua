@@ -10,6 +10,7 @@ o.swapfile = false
 o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 o.clipboard = "unnamedplus"
+o.updatetime = 250
 
 -- UI
 o.splitbelow = true

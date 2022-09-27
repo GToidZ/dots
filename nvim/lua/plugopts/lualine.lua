@@ -10,6 +10,9 @@ require('lualine').setup {
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     always_divide_middle = true,
+    disabled_filetypes = {
+      statusline = { "tagbar" }
+    }
   },
   sections = {
     lualine_a = {'mode'},
