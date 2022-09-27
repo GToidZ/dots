@@ -38,6 +38,9 @@ return packer.startup(function(use)
       "kyazdani42/nvim-web-devicons", opt=true
     }
   }
+
+  -- Outline viewer
+  use { "preservim/tagbar" }
   
   if packer_bootstrap then
     require("packer").sync()
