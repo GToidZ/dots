@@ -78,8 +78,10 @@ lsp.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
-    diagnostics = {
-      globals = {"vim",},
+    Lua = {
+      diagnostics = {
+        globals = {"vim",},
+      }
     }
   }
 }

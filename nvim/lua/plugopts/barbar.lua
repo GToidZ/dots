@@ -1,4 +1,4 @@
-local ok, plugin = pcall(require, "bufferline")
+local ok, _ = pcall(require, "bufferline")
 if not ok then
   return
 end
