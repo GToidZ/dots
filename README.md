@@ -9,3 +9,5 @@ My personal dotfiles for using in most UNIX systems.
 * ccls (latest)
 * u-ctags (latest)
 * Pyright LSP install via npm.
+* CMake
+* GNU Make
