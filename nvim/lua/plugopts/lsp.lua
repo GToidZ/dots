@@ -10,6 +10,7 @@ end
 
 local protocol = require("vim.lsp.protocol")
 local cmp = require("cmp")
+local root_pattern = require("lspconfig").util.root_pattern
 
 require("mason").setup()
 require("mason-lspconfig").setup {
@@ -79,6 +80,21 @@ lsp.sumneko_lua.setup {
   settings = {
     diagnostics = {
       globals = {"vim",},
+    }
+  }
+}
+
+lsp.ccls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = root_pattern("compile-command.json", ".ccls"),
+  init_options = {
+    compilationDatabaseDirectory = "build",
+    cache = {
+      directory = "/tmp/ccls"
+    },
+    clang = {
+      excludeArgs = { "-frounding-math" }
     }
   }
 }
