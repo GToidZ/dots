@@ -29,7 +29,7 @@ return packer.startup({function(use)
   use { "wbthomason/packer.nvim" }
 
   -- Color scheme
-  use { "ellisonleao/gruvbox.nvim" } 
+  use { "ellisonleao/gruvbox.nvim" }
 
   -- Icons
   use { "kyazdani42/nvim-web-devicons" }
@@ -72,6 +72,9 @@ return packer.startup({function(use)
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
+
+  -- Utils
+  use { "nacro90/numb.nvim" }
 
   if packer_bootstrap then
     require("packer").sync()

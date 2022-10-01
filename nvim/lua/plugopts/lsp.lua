@@ -60,10 +60,13 @@ cmp.setup {
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "vsnip" },
-  },
-    { name = "buffer" })
+    { name = "nvim_lsp", max_item_count = 7 },
+    { name = "vsnip", max_item_count = 7 },
+    { name = "buffer", max_item_count = 7 },
+  }),
+  view = {
+    entries = { name = "custom" }
+  }
 }
 
 -- Setup lspconfig

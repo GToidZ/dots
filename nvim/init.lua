@@ -10,6 +10,7 @@ require("plugopts.treesitter")
 require("plugopts.lualine")
 require("plugopts.tagbar")
 require("plugopts.barbar")
+require("plugopts.numb")
 
 -- Add. keymaps
 require("keymaps.telescope")

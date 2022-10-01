@@ -38,7 +38,7 @@ o.backspace = "indent,eol,start"
 
 -- Behavior
 o.hidden = true
-o.completeopt = "menuone,noinsert,noselect"
+o.completeopt = "menu,menuone,noselect"
 
 -- Leader
 g.mapleader = " "
