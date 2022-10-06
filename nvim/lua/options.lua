@@ -16,6 +16,7 @@ o.updatetime = 250
 o.splitbelow = true
 o.splitright = true
 o.number = true
+o.relativenumber = true
 o.foldenable = true
 o.cursorline = true
 o.scrolloff = 2
