@@ -1,7 +1,7 @@
 local util = require("util")
 local nnoremap = util.nnoremap
 local vnoremap = util.vnoremap
-local inoremap = util.inoremap
+-- local inoremap = util.inoremap
 
 -- Splits
 nnoremap("<leader>ws", ":split<CR>")

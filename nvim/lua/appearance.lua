@@ -1,4 +1,4 @@
-local ok, theme = pcall(require, 'gruvbox')
+local ok, _ = pcall(require, 'gruvbox')
 if not ok then
   return
 end

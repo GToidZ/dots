@@ -76,6 +76,13 @@ return packer.startup({function(use)
   -- Utils
   use { "nacro90/numb.nvim" }
 
+  -- Python
+  -- Refactoring
+  use {
+    "python-rope/ropevim",
+    ft = "python"
+  }
+
   if packer_bootstrap then
     require("packer").sync()
   end
