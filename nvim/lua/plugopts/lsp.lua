@@ -60,9 +60,9 @@ cmp.setup {
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
-    { name = "nvim_lsp", max_item_count = 7 },
-    { name = "vsnip", max_item_count = 7 },
-    { name = "buffer", max_item_count = 7 },
+    { name = "nvim_lsp" },
+    { name = "vsnip"    },
+    { name = "buffer"   },
   }),
   view = {
     entries = { name = "custom" }
@@ -102,4 +102,9 @@ lsp.ccls.setup {
       excludeArgs = { "-frounding-math" }
     }
   }
+}
+
+lsp.dockerls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
 }

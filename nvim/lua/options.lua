@@ -21,7 +21,6 @@ o.foldenable = true
 o.cursorline = true
 o.scrolloff = 2
 o.sidescrolloff = 3
-o.background = "dark"
 
 -- Editing
 o.mouse = "nv"
