@@ -17,9 +17,18 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {
+      {
+        'filename',
+        file_status = true,
+        path = 3,
+        symbols = {
+          readonly = '[RO]'
+        }
+      }
+    },
     lualine_x = {'encoding', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_y = {'diff'},
+    lualine_z = {'progress', 'location'}
   }
 }
