@@ -14,6 +14,13 @@ local root_pattern = require("lspconfig").util.root_pattern
 
 require("mason").setup()
 require("mason-lspconfig").setup {
+  ensure_installed = {
+    "sumneko_lua",
+    "pyright",
+    "html",
+    "cssls",
+    "tsserver",
+  },
   automatic_installation = true,
 }
 
@@ -28,7 +35,6 @@ local on_attach = function(client, bufnr)
 
   buf_set_keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
   buf_set_keymap("n", "gI", ":lua vim.lsp.buf.implementation()<CR>", opts)
-  buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 
   vim.api.nvim_create_autocmd("CursorHold", {
     buffer = bufnr,
@@ -53,10 +59,10 @@ cmp.setup {
     end,
   },
   mapping = cmp.mapping.preset.insert {
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-j>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.abort(),
+    ["<Esc>"] = cmp.mapping.abort(),  -- It's more behavorial for me to use ESC.
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
   },
   sources = cmp.config.sources({
@@ -70,7 +76,9 @@ cmp.setup {
 }
 
 -- Setup lspconfig
-local capabilities = require("cmp_nvim_lsp").default_capabilities(protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(
+                      protocol.make_client_capabilities()
+                     )
 
 lsp.pyright.setup {
   on_attach = on_attach,
@@ -114,12 +122,14 @@ lsp.cssls.setup {
   capabilities = capabilities
 }
 
-lsp.tailwindcss.setup {
+lsp.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
 
-lsp.tsserver.setup {
+-- Optional LSP from down here,
+
+lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
